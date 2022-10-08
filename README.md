@@ -1,6 +1,8 @@
-# lichess-bot
+# RaviharaV-bot_v2
 [![Python Build](https://github.com/ShailChoksi/lichess-bot/actions/workflows/python-build.yml/badge.svg)](https://github.com/ShailChoksi/lichess-bot/actions/workflows/python-build.yml)
 [![Python Test](https://github.com/ShailChoksi/lichess-bot/actions/workflows/python-test.yml/badge.svg)](https://github.com/ShailChoksi/lichess-bot/actions/workflows/python-test.yml)
+
+## Code Maintained by RaviharaV-bot and HunterThePro.
 
 A bridge between [Lichess Bot API](https://lichess.org/api#tag/Bot) and bots.
 
@@ -18,7 +20,7 @@ virtualenv venv -p python3 # If this fails you probably need to add Python3 to y
 source ./venv/bin/activate
 python3 -m pip install -r requirements.txt
 ```
-- Copy `config.yml.default` to `config.yml`.
+- Open `config.yml` file and make the changes you want to.
 - Edit the variants: `supported_variants` and time controls: `supported_tc` from the `config.yml` file as necessary.
 
 ### Windows:
@@ -320,7 +322,7 @@ python3 lichess-bot.py --logfile log.txt
 - You can specify the number of `engine.uci_options.threads` in the `config.yml` file as well.
 - To start: `python3 lichess-bot.py`.
 
-## LeelaChessZero: Windows CPU 2021
+## LeelaChessZero: Windows CPU 2022
 - For Windows modern CPUs, download the lczero binary from the [latest Lc0 release](https://github.com/LeelaChessZero/lc0/releases) (e.g. `lc0-v0.27.0-windows-cpu-dnnl.zip`).
 - Unzip the file, it comes with `lc0.exe` , `dnnl.dll`, and a weights file example, `703810.pb.gz` (amongst other files).
 - All three main files need to be copied to the engines directory.
@@ -359,10 +361,10 @@ Wants=network-online.target
 
 [Service]
 Environment="PYTHONUNBUFFERED=1"
-ExecStart=/usr/bin/python3 /home/thibault/lichess-bot/lichess-bot.py
-WorkingDirectory=/home/thibault/lichess-bot/
-User=thibault
-Group=thibault
+ExecStart=/usr/bin/python3 /home/lichessbot/lichess-bot/lichess-bot.py
+WorkingDirectory=/home/lichessbot/lichess-bot/
+User=lichessbot
+Group=lichessbot
 Restart=always
 
 [Install]
